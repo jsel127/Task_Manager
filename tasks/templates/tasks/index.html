@@ -1,0 +1,16 @@
+{% extends 'tasks/layout.html' %}
+{% block title %}
+    All Tasks
+{% endblock %}
+{% block body %}
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <a href="{%url 'tasks:task' task.id %}">{{task.name}}</a> Due: {{task.end_date}}
+            </li>
+        {% empty %}
+            <li>No tasks.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tasks:add' }
+{% endblock %}

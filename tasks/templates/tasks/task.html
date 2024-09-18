@@ -1,0 +1,15 @@
+{% extends 'tasks/layout.html' %}
+{% block title %}
+    Task: {{task.name}} 
+{% endblock %}
+{% block body %}
+    <h1>{{task.name}}</h1>
+    <ul>
+        <li>Name: {{task.name}}</li>
+        <li>Description: {{task.description}}</li>
+        <li>Start Date: {{task.start_date}}</li>
+        <li>End Date: {{task.end_date}}</li>
+        <li>Status: {% if task.done %}Completed{% else %}Incomplete{% endif %}</li>
+    </ul>
+    <a href="{% url 'tasks:index' %}">Return to all tasks</a>
+{% endblock %}
