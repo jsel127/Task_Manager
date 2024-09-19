@@ -1,6 +1,6 @@
 {% extends 'tasks/layout.html' %}
 {% block title %}
-    Task: {{task.name}} 
+    {{task.name}} 
 {% endblock %}
 {% block body %}
     <h1>{{task.name}}</h1>
@@ -11,5 +11,7 @@
         <li>End Date: {{task.end_date}}</li>
         <li>Status: {% if task.done %}Completed{% else %}Incomplete{% endif %}</li>
     </ul>
+    <a href="{% url 'tasks:update' task.id %}">Update</a>
+    <a href="{% url 'tasks:delete' task.id %}">Delete</a>
     <a href="{% url 'tasks:index' %}">Return to all tasks</a>
 {% endblock %}

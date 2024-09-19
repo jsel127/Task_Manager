@@ -1,0 +1,14 @@
+{% extends 'tasks/layout.html' %}
+{% block title %}
+    Update Tasks
+{% endblock %}
+{% block body %}
+    <form action="{% url 'tasks:add' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Save" name="save" />
+        <input type="submit" value="Discard Edits" name="discard" />
+        <!-- <button type="submit" name="save">Save</button>
+        <button type="submit" name="discard">Discard Edits</button> -->
+    </form>
+{% endblock %}
